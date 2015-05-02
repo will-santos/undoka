@@ -1,0 +1,22 @@
+# Arquivo de configuração do app engine.
+
+# id da aplicação para deploy
+application: undokaa
+# versão da aplicação no servidor
+version: 1
+# versão do python a ser usado
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+
+handlers:
+# Definir como o app engine vai responder os request.
+- url: .*
+  script: main.app
+# Bibliotecas suportadas por padrão pelo app engine.
+libraries:
+- name: jinja2
+  version: latest
+- name: markupsafe
+  version: latest
